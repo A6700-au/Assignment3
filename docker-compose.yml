@@ -1,0 +1,11 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "8080:80"
+    develop:
+      watch:
+        - path: ./testfile.html
+          action: rebuild
+        - path: ./Dockerfile
+          action: rebuild
