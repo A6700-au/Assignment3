@@ -1,11 +1,7 @@
 services:
   nginx:
-    build: .
+    image: my-nginx
     ports:
-      - "8081:80"
-    develop:
-      watch:
-        - path: ./testfile.html
-          action: rebuild
-        - path: ./Dockerfile
-          action: rebuild
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html
